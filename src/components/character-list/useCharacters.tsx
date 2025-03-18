@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { RICK_AND_MORTY_API_URL } from '@/utils/consts';
 import { Character } from '@/types/character';
-import { ApiResponse } from '@/types/api';
+import { getAllCharacters } from '@/lib/services/characters';
 
 export const useCharacters = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -13,10 +12,7 @@ export const useCharacters = () => {
     const fetchCharacters = async () => {
       setLoading(true);
 
-      const res = await fetch(`${RICK_AND_MORTY_API_URL}/character?page=${page}`);
-      if (!res.ok) throw new Error('Failed to fetch characters');
-
-      const data: ApiResponse<Character> = await res.json();
+      const data = await getAllCharacters(page);
 
       setCharacters(data.results);
       setTotalPages(data.info.pages);
