@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { Button } from "@/components/ui/button";
 import { CharacterSelectionProvider } from "@/hooks/useCharacterSelection";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CharacterSelectionProvider>{children}</CharacterSelectionProvider>
+        <Analytics />
         <footer className="flex justify-center">
           <div>
             Created with ❤️ by
