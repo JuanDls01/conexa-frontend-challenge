@@ -2,6 +2,8 @@
 
 This project is part of a challenge from the company [Conexa](https://conexa.ai/) for the role Ssr. Frontend Developer 👨‍💻. You can find the challenge description [here](https://conexatech.notion.site/Ssr-Frontend-Developer-NextJS-7bb4bd04d278424b90101f28bae5a84b).
 
+🌎 Deploy: [conexa-challenge.juanidls.dev/](https://conexa-challenge.juanidls.dev/)
+
 ## 💻 Technologies
 
 - Next.js
