@@ -1,25 +1,25 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import { Button } from "@/components/ui/button";
-import { CharacterSelectionProvider } from "@/hooks/useCharacterSelection";
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import Link from 'next/link';
+import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
+import { Button } from '@/components/ui/button';
+import { CharacterSelectionProvider } from '@/hooks/useCharacterSelection';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Conexa Frontend Challenge",
+  title: 'Conexa Frontend Challenge',
   description:
-    "This page is the result of a challenge for the position of Sr. Frontend Developer at Conexa.",
+    'This page is the result of a challenge for the position of Sr. Frontend Developer at Conexa.',
 };
 
 export default function RootLayout({
@@ -28,17 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang='en'>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <CharacterSelectionProvider>{children}</CharacterSelectionProvider>
         <Analytics />
-        <footer className="flex justify-center">
+        <footer className='flex justify-center'>
           <div>
             Created with ❤️ by
-            <Button variant={"link"} className="px-2">
-              <Link href={"https://juanidls.dev"} target="_blank">
+            <Button variant={'link'} className='px-2'>
+              <Link href={'https://juanidls.dev'} target='_blank'>
                 JuaniDls
               </Link>
             </Button>

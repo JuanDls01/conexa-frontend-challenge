@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { SelectedCharacters } from "@/hooks/useCharacterSelection";
-import { getCharacterById } from "@/lib/services/characters";
-import { getEpisodesById } from "@/lib/services/episodes";
-import { Episode } from "@/types/episode";
+import { useEffect, useState } from 'react';
+import { SelectedCharacters } from '@/hooks/useCharacterSelection';
+import { getCharacterById } from '@/lib/services/characters';
+import { getEpisodesById } from '@/lib/services/episodes';
+import { Episode } from '@/types/episode';
 
 type EpisodesState = {
   ch1EpData: Episode[] | null;
@@ -31,12 +31,8 @@ export const useEpisodes = (selectedCharacters: SelectedCharacters) => {
 
       // TODO: Move this logic to an utils fc
       // Get episodes ids from episodes urls:
-      const ch1EpIds = character1.episode.map(
-        (epUrl) => epUrl.split("/").pop() ?? ""
-      );
-      const ch2EpIds = character2.episode.map(
-        (epUrl) => epUrl.split("/").pop() ?? ""
-      );
+      const ch1EpIds = character1.episode.map((epUrl) => epUrl.split('/').pop() ?? '');
+      const ch2EpIds = character2.episode.map((epUrl) => epUrl.split('/').pop() ?? '');
 
       // Filter episodes by shared and not shared:
       const sharedEpIds = ch1EpIds.filter((ep) => ch2EpIds.includes(ep));

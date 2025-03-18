@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useCharacterSelection } from "@/hooks/useCharacterSelection";
-import EpisodeList from "../episode-list";
-import { useEpisodes } from "./useEpisodes";
+import { useCharacterSelection } from '@/hooks/useCharacterSelection';
+import EpisodeList from '../episode-list';
+import { useEpisodes } from './useEpisodes';
 
 const EpisodesSection = () => {
   const { selectedCharacters } = useCharacterSelection();
@@ -14,25 +14,19 @@ const EpisodesSection = () => {
 
   if (loading)
     return (
-      <div className="w-full h-80 flex items-center justify-center rounded-xl border">
+      <div className='w-full h-80 flex items-center justify-center rounded-xl border'>
         Cargando...
       </div>
     );
 
   return (
-    <section className="grid gap-2 lg:grid-cols-3 my-3">
+    <section className='grid gap-2 lg:grid-cols-3 my-3'>
+      <EpisodeList title='Character #1 - Only Episodes' episodes={episodes.ch1EpData ?? []} />
       <EpisodeList
-        title="Character #1 - Only Episodes"
-        episodes={episodes.ch1EpData ?? []}
-      />
-      <EpisodeList
-        title="Character #1 & #2 - Shared Episodes"
+        title='Character #1 & #2 - Shared Episodes'
         episodes={episodes.sharedEpData ?? []}
       />
-      <EpisodeList
-        title="Character #2 - Only Episodes"
-        episodes={episodes.ch2EpData ?? []}
-      />
+      <EpisodeList title='Character #2 - Only Episodes' episodes={episodes.ch2EpData ?? []} />
     </section>
   );
 };
