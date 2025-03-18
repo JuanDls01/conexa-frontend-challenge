@@ -1,4 +1,5 @@
 import CharactersList from "@/components/character-list";
+import EpisodesSection from "@/components/episodes-section";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
           <CharactersList listId={"ch1"} title="Character #1" />
           <CharactersList listId={"ch2"} title="Character #2" />
         </section>
+        <EpisodesSection />
       </main>
     </div>
   );
