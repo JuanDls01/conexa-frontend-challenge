@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { CharacterSelectionProvider } from "@/hooks/useCharacterSelection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <CharacterSelectionProvider>{children}</CharacterSelectionProvider>
         <footer className="flex justify-center">
           <div>
             Created with ❤️ by
