@@ -9,19 +9,19 @@ import { Button } from "../ui/button";
 import CharacterCard from "../character-card";
 import { useCharacters } from "./useCharacters";
 
-export type ListId = "1" | "2";
+export type ListId = "ch1" | "ch2";
 
 type CharactersListProps = {
   listId: ListId;
   title: string;
 };
 
-const CharactersList = ({ title }: CharactersListProps) => {
+const CharactersList = ({ title, listId }: CharactersListProps) => {
   const { characters, page, totalPages, setPage, loading } = useCharacters();
   if (loading)
     return (
-      <div className="w-full h-full flex items-center justify-center rounded-xl border">
-        Loading...
+      <div className="w-full lg:h-[70vh] flex items-center justify-center rounded-xl border">
+        Cargando...
       </div>
     );
 
@@ -34,6 +34,8 @@ const CharactersList = ({ title }: CharactersListProps) => {
         {characters.map((character) => (
           <CharacterCard
             key={character.id}
+            id={character.id}
+            listId={listId}
             name={character.name}
             species={character.species}
             status={character.status}
