@@ -14,7 +14,7 @@ This project is part of a challenge from the company [Conexa](https://conexa.ai/
 Clone the repository:
 
 ```bash
-git clone https://github.com/JuanDls01/transactions-tracker.git
+git clone https://github.com/JuanDls01/conexa-frontend-challenge.git
 ```
 
 Install dependencies:
